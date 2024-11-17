@@ -7,10 +7,7 @@ const Home = () => {
   const [captchaId, setCaptchaId] = useState("");
   const [coins, setCoins] = useState(0);
   const [input, setInput] = useState("");
-  const [timer, setTimer] = useState(60); // Timer for CAPTCHA expiration
-  
-
-
+  const [timer, setTimer] = useState(60); 
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -38,23 +35,17 @@ const Home = () => {
    // Handle CAPTCHA "Skip"
    const handleSkip = () => {
     setInput("");
-    setTimer(15); // Reset timer
-    // Logic to fetch a new CAPTCHA
-    setCaptchaId(""); // Reset CAPTCHA ID if needed
+    setTimer(60);
+    setCaptchaId(""); 
   };
 
   return (
     <div className="flex flex-col items-center justify-center mt-8 bg-gray-100 p-6 rounded-lg shadow-lg max-w-md mx-auto">
-    {/* Coin Balance Display */}
+    
     <CoinBalance coins={coins} />
-
-    {/* Captcha Component */}
     <Captcha setCaptchaId={setCaptchaId} />
-
-    {/* Timer Display */}
     <div className="text-sm text-red-600 font-semibold mt-2">{timer}s</div>
 
-    {/* Input Field */}
     <input
       type="text"
       value={input}
@@ -63,7 +54,6 @@ const Home = () => {
       className="mt-4 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
     />
 
-    {/* Buttons */}
     <div className="flex space-x-4 mt-4">
       <button
         onClick={handleSubmit}
@@ -79,12 +69,10 @@ const Home = () => {
       </button>
     </div>
 
-    {/* Refer & Earn Section */}
     <button className="mt-4 px-6 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition duration-300">
       Refer & Earn
     </button>
 
-    {/* Score Indicators */}
     <div className="flex space-x-4 mt-6">
       <div className="flex items-center justify-center bg-blue-100 text-blue-600 px-3 py-1 rounded-full">
         16
@@ -97,7 +85,6 @@ const Home = () => {
       </div>
     </div>
 
-    {/* Rules Section */}
     <div className="mt-4 text-xs text-gray-600">
       <p>* All words are case sensitive.</p>
       <p>* Calculative CAPTCHAs must be solved.</p>
