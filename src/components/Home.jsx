@@ -32,7 +32,6 @@ const Home = () => {
     }
   };
 
-   // Handle CAPTCHA "Skip"
    const handleSkip = () => {
     setInput("");
     setTimer(60);
