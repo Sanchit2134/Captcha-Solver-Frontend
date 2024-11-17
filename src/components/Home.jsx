@@ -7,7 +7,7 @@ const Home = () => {
   const [captchaId, setCaptchaId] = useState("");
   const [coins, setCoins] = useState(0);
   const [input, setInput] = useState("");
-  const [timer, setTimer] = useState(10); // Timer for CAPTCHA expiration
+  const [timer, setTimer] = useState(60); // Timer for CAPTCHA expiration
   
 
 
